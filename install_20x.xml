@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:SearchPackages</id>
+<name>Search For Packages</name>
+<version>1.0</version>
+
+<file name="$themedir/Packages.template.php">
+	<operation>
+		<search position="before"><![CDATA[global $context, $settings, $options, $txt, $scripturl, $modSettings, $forum_version]]></search>
+		<add><![CDATA[, $boardurl]]></add>
+	</operation>
+	<operation>
+		<search position="replace"><![CDATA[<div class="title_bar">
+			<h3 class="titlebg">', $txt['modification_package'], '</h3>
+		</div>]]></search>
+		<add><![CDATA[<div class="title_bar">
+			<h3 class="titlebg">
+				<span class="ie6_header floatright" id="mods_search" style="display: none;">
+					<form action="#" method="post" class="floatright" onsubmit="FilterPackages(\'search_mods\', document.getElementById(\'mod_term\').value); return false;">
+						<input type="text" id="mod_term" name="mod_term" value="', $txt['admin_search'], '" onclick="if (this.value == \'', $txt['admin_search'], '\') this.value = \'\'; return false" class="input_text" oninput="FilterPackages(\'search_mods\', this.value); return false;" /></a>
+						<img src="', $settings['images_url'], '/filter.gif" alt="*" title="'. $txt['search'] . '" />
+					</form>
+				</span>
+				', $txt['modification_package'], '
+			</h3>
+		</div>]]></add>
+	</operation>
+	<operation>
+		<search position="before"><![CDATA[foreach ($context['available_mods'] as $i => $package)
+		{
+			echo '
+			<tr class="]]></search>
+		<add><![CDATA[search_mods ]]></add>
+	</operation>
+	<operation>
+		<search position="before"><![CDATA[<input type="hidden" name="sa" value="browse" />
+		</form>
+	</div>
+	<br class="clear" />]]></search>
+		<add><![CDATA[
+	<script>
+		function FilterPackages(classes, search)
+		{
+			search = search.toLowerCase();
+			var packages = document.getElementsByClassName(classes);
+			for (var i = 0; i < packages.length; i++) 
+			{
+				var package = packages[i];
+				var tds = package.getElementsByTagName("td");
+				var name = tds[1].innerHTML;
+				var name = name.toLowerCase();
+				package.style.display = (search.length == 0 || name.indexOf(search) > -1) ? "" : "none";
+			} 
+		}
+		document.getElementById("mods_search").style.display = "";
+	</script>]]></add>
+	</operation>
+</file>
+</modification>
