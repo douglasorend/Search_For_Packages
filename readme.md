@@ -1,28 +1,32 @@
-[hr]
-[center][color=red][size=16pt][b]SEARCH FOR PACKAGES v1.2[/b][/size][/color]
-[url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4164]Link to Mod[/url]
-[/center]
-[hr]
+-------
 
-[color=blue][b][size=12pt][u]Introduction[/u][/size][/b][/color]
+# SEARCH FOR PACKAGES v1.2
+
+[**By Dougiefresh**](http://www.simplemachines.org/community/index.php?action=profile;u=253913) -> [Link to Mod](http://custom.simplemachines.org/mods/index.php?mod=4164)
+
+-------
+
+## Introduction
 I have 214 mods listed in my site's Package Manager.  Searching for something is a pain, especially if I'm not sure what it might be called.  Sure, I could use the browser's search functionality.....  But it's kinda limited, in that you still have to deal with all the packages you are not looking for....  
 
 So I set out to make mod to deal with package search functionality a reality....  So here it is!  In supported browsers (which should be everything recent), just start typing in what you're looking for and the javascript will hide everything that doesn't contain the text in the box.  Older browsers may require you to press Enter before it'll start filtering the results.  It's that simple!
 
-[color=blue][b][size=12pt][u]Admin Settings[/u][/size][/b][/color]
+## Admin Settings
 There are no admin settings.  To deactivate this mod, you must uninstall this mod.
 
-[color=blue][b][size=12pt][u]Compatibility Notes[/u][/size][/b][/color]
+## Compatibility Notes
 This mod was tested on SMF 2.0.14, but should work on SMF 2.0 and up.  SMF 1.x is not and will not be supported.
 
 Mods that should be installed after this one: (NOT REQUIRED)
-o [url=http://www.simplemachines.org/community/index.php?topic=253702.msg3157375#msg3157375]Super Admin v1.7[/url]
 
-[color=blue][b][size=12pt][u]Changelog[/u][/size][/b][/color]
-The changelog can be viewed at [url=http://www.xptsp.com/board/free-modifications/search-for-packages/?tab=1]XPtsp.com[/url].
+- [Super Admin v1.7](http://www.simplemachines.org/community/index.php?topic=253702.msg3157375#msg3157375)
 
-[color=blue][b][size=12pt][u]License[/u][/size][/b][/color]
+## Changelog
+The changelog can be viewed at [XPtsp.com](http://www.xptsp.com/board/free-modifications/search-for-packages/?tab=1).
+
+## License
 Copyright (c) 2017 - 2018, Douglas Orend
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
