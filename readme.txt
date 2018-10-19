@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]SEARCH FOR PACKAGES v1.0[/b][/size][/color]
+[center][color=red][size=16pt][b]SEARCH FOR PACKAGES v1.1[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4164]Link to Mod[/url]
 [/center]
 [hr]
@@ -22,7 +22,7 @@ o [url=http://www.simplemachines.org/community/index.php?topic=253702.msg3157375
 The changelog has been removed and can be seen at [url=http://www.xptsp.com/board/index.php?topic=1617.msg2316#msg2316]XPtsp.com[/url].
 
 [color=blue][b][size=12pt][u]License[/u][/size][/b][/color]
-[quote]Copyright (c) 2017, Douglas Orend
+[quote]Copyright (c) 2017 - 2018, Douglas Orend
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:

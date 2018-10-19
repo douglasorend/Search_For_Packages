@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:SearchPackages</id>
+<name>Search For Packages</name>
+<version>1.1</version>
+
+<file name="$sourcedir/Packages.php">
+	<!-- PackageBrowse function -->
+	<operation>
+		<search position="before"><![CDATA[global $txt, $scripturl, $context, $forum_version, $sourcedir, $smcFunc]]></search>
+		<add><![CDATA[, $settings]]></add>
+	</operation>
+	<operation>
+		<search position="replace"><![CDATA['title' => $txt[$type . '_package'],]]></search>
+		<add><![CDATA['title' => ($type == 'modification' ? '<span class="ie6_header floatright" id="mods_search" style="display: none;">
+					<form action="#" method="post" class="floatright" onsubmit="FilterPackages(\'search_mods\' . document.getElementById(\'mod_term\').value); return false;">
+						<input type="text" id="mod_term" name="mod_term" value="' . $txt['admin_search'] . '" onclick="if (this.value == \'' . $txt['admin_search'] . '\') this.value = \'\'; return false" class="input_text" oninput="FilterPackages(\'search_mods\', this.value); return false;" /></a>
+						<img src="' . $settings['images_url'] . '/filter.gif" alt="*" title="' . $txt['search'] . '" />
+					</form>
+				</span>' : '') . $txt[$type . '_package'],]]></add>
+	</operation>
+	<operation>
+		<search position="after"><![CDATA['get_items' => array(]]></search>
+		<add><![CDATA['data_check' => array(
+				'class' => function($package_md5) use ($type, &$context)
+				{
+					return 'search_mods';
+				}
+			),
+			]]></add>
+	</operation>
+</file>
+<file name="$themedir/Packages.template.php">
+	<operation>
+		<search position="before"><![CDATA[global $context, $txt, $scripturl, $modSettings, $forum_version]]></search>
+		<add><![CDATA[, $boardurl]]></add>
+	</operation>
+	<operation>
+		<search position="after"><![CDATA[var oAdvancedPanelToggle = new smc_Toggle({]]></search>
+		<add><![CDATA[function FilterPackages(classes, search)
+		{
+			search = search.toLowerCase();
+			var packages = document.getElementsByClassName(classes);
+			for (var i = 0; i < packages.length; i++) 
+			{
+				var package = packages[i];
+				var tds = package.getElementsByTagName("td");
+				var name = tds[1].innerHTML;
+				var name = name.toLowerCase();
+				package.style.display = (search.length == 0 || name.indexOf(search) > -1) ? "" : "none";
+			} 
+		}
+		document.getElementById("mods_search").style.display = "";
+
+		]]></add>
+	</operation>
+</file>
+</modification>
